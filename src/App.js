@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Call } from "@manishiitg/webrtc-call";
 import Modal from './Modal';
+import clsx from "clsx";
 // const user = localStorage.getItem('CUSTOMER_DATA')
 // const room =123
 // console.log(user)
@@ -14,27 +15,27 @@ function App() {
   })
 
   const [show, setShow] = useState(false)
-  
+
   useEffect(() => {
-  setShow(true)
- 
+    setShow(true)
+    return () => setShow(false);
   }, [])
 
-  const handleSubmit =(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault()
   }
-  console.log('all data', data)
-  
+
+  const size = [300, 400]
   return (
-    <div className="App">
-       {show===true?
-     <Modal setShow={setShow} data={data} setData={setData} handleSubmit={handleSubmit}/>:
-      <Call room={data.room} autoconnect={true} enableChat={false} disableVideo={false} defaultProfile={
-        {
-          "email": `${data?.email}`,
-          "name": `${data?.name}`
-        }
-      } />}
+    <div>
+      {show === true ?
+        <Modal setShow={setShow} data={data} setData={setData} size={false} handleSubmit={handleSubmit} /> :
+        <Call room={data.room} autoconnect={true} enableChat={false} disableVideo={false} defaultProfile={
+          {
+            "email": `${data?.email}`,
+            "name": `${data?.name}`
+          }
+        } />}
 
     </div>
   );
