@@ -5,13 +5,13 @@ const Form = ({ setShow, data, setData }) => {
 
   return (
     <div>
-      <div class='modal-dialog' role='document'>
-        <div class='modal-content'>
-          <div class='modal-header'>
-            <h5 class='modal-title'>Modal title</h5>
+      <div className='modal-dialog' role='document'>
+        <div className='modal-content'>
+          <div className='modal-header'>
+            <h5 className='modal-title'>Modal title</h5>
             <button
               type='button'
-              class='close'
+              className='close'
               data-dismiss='modal'
               aria-label='Close'
               onClick={handleClose}
@@ -19,7 +19,7 @@ const Form = ({ setShow, data, setData }) => {
               <span aria-hidden='true'>&times;</span>
             </button>
           </div>
-          <div class='modal-body'>
+          <div className='modal-body'>
             <input
               placeholder='roomid'
               value={data.room}
@@ -36,13 +36,13 @@ const Form = ({ setShow, data, setData }) => {
               onChange={e => setData({ ...data, name: e.target.value })}
             />
           </div>
-          <div class='modal-footer'>
-            <button type='submit' class='btn btn-primary' onClick={handleClose}>
+          <div className='modal-footer'>
+            <button type='submit' className='btn btn-primary' onClick={handleClose}>
               Save changes
             </button>
             <button
               type='button'
-              class='btn btn-secondary'
+              className='btn btn-secondary'
               data-dismiss='modal'
             >
               Close

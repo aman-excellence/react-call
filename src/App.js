@@ -1,39 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import { Call } from "@manishiitg/webrtc-call";
-import Modal from './Modal';
-import clsx from "clsx";
+// import Modal from './Modal';
+// import clsx from "clsx";
 // const user = localStorage.getItem('CUSTOMER_DATA')
 // const room =123
 // console.log(user)
 function App() {
-  const [data, setData] = useState({
-    room: '',
-    email: '',
-    name: ' '
-  })
+  // const [data, setData] = useState({
+  //   room: '',
+  //   email: '',
+  //   name: ' '
+  // })
 
-  const [show, setShow] = useState(false)
+  // const [show, setShow] = useState(false)
 
-  useEffect(() => {
-    setShow(true)
-    return () => setShow(false);
-  }, [])
+  // useEffect(() => {
+  //   setShow(true)
+  //   return () => setShow(false);
+  // }, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  // }
 
   return (
     <div style={{height: "100vh"}}>
-      {show === true ?
-        <Modal setShow={setShow} data={data} setData={setData}   handleSubmit={handleSubmit} /> :
-        <Call room={data.room} autoconnect={true}  enableChat={false} disableVideo={false} defaultProfile={
+        <Call room={123} autoconnect={true}  enableChat={false} disableVideo={false} defaultProfile={
           {
-            "email": `${data?.email}`,
-            "name": `${data?.name}`
+            "email": `abc@gmail.com`,
+            "name": `aman`
           }
-        } />}
+        } />
     </div>
   );
 }
