@@ -6,7 +6,6 @@ import clsx from "clsx";
 // const user = localStorage.getItem('CUSTOMER_DATA')
 // const room =123
 // console.log(user)
-
 function App() {
   const [data, setData] = useState({
     room: '',
@@ -25,18 +24,16 @@ function App() {
     e.preventDefault()
   }
 
-  const size = [300, 400]
   return (
-    <div>
+    <div style={{height: "100vh"}}>
       {show === true ?
-        <Modal setShow={setShow} data={data} setData={setData} size={false} handleSubmit={handleSubmit} /> :
-        <Call room={data.room} autoconnect={true} enableChat={false} disableVideo={false} defaultProfile={
+        <Modal setShow={setShow} data={data} setData={setData}   handleSubmit={handleSubmit} /> :
+        <Call room={data.room} autoconnect={true}  enableChat={false} disableVideo={false} defaultProfile={
           {
             "email": `${data?.email}`,
             "name": `${data?.name}`
           }
         } />}
-
     </div>
   );
 }
